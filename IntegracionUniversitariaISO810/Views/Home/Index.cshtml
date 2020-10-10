@@ -1,0 +1,22 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="container-fluid">
+    <div class="row my-5">
+        <a asp-area="" asp-controller="Exportar" asp-action="Index" class="col-md-5 square square-link ">
+            <div class="d-flex flex-column align-items-center">
+                <h1><i class="fas fa-cloud-download-alt"></i></h1>
+                <span>Exportar</span>
+            </div>
+        </a>
+
+        <a asp-area="" asp-controller="Importar" asp-action="Index" class="col-md-5 offset-md-1 square square-link">
+            <div class="d-flex flex-column align-items-center">
+                <h1><i class="fas fa-cloud-upload-alt"></i></h1>
+                <span>Importar</span>
+            </div>
+        </a>
+    </div>
+</div>

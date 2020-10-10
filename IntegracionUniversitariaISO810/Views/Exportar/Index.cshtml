@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+    <div class="container-fluid">
+        <div class="row my-5">
+            <a asp-area="" asp-controller="Exportar" asp-action="DatosAcademicos" class="col-md-3 square square-link my-5">
+                <div class="d-flex flex-column align-items-center">
+                    <h1><i class="fas fa-school"></i></h1>
+                    <span>Datos Academicos</span>
+                </div>
+            </a>
+
+            <a asp-area="" asp-controller="Exportar" asp-action="PensumS" class="col-md-3 offset-md-1 square square-link my-5">
+                <div class="d-flex flex-column align-items-center">
+                    <h1><i class="fas fa-file-alt"></i></h1>
+                    <span>Pensum</span>
+                </div>
+            </a>
+
+            <a asp-area="" asp-controller="Exportar" asp-action="Profesores" class="col-md-3 offset-md-1 square square-link my-5">
+                <div class="d-flex flex-column align-items-center">
+                    <h1><i class="fas fa-chalkboard-teacher"></i></h1>
+                    <span>Profesores</span>
+                </div>
+            </a>
+
+            <a asp-area="" asp-controller="Exportar" asp-action="Estudiantes" class="col-md-3 square square-link my-5">
+                <div class="d-flex flex-column align-items-center">
+                    <h1><i class="fas fa-user-graduate"></i></h1>
+                    <span>Estudiantes</span>
+                </div>
+            </a>
+        </div>
+    </div>

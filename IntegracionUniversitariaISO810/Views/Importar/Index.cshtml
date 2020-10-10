@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container-fluid">
+    <div class="row my-5">
+        <a class="col-md-3 square square-link my-5">
+            <form action="@Url.Action("DatosAcademicos","Importar")" method="post" enctype="multipart/form-data">
+                <input style="width:1px;height:1px; opacity: 0" type="file" name="file" accept=".txt" />
+            </form>
+            <div class="d-flex flex-column align-items-center">
+                <h1><i class="fas fa-school"></i></h1>
+                <span>Datos Academicos</span>
+            </div>
+        </a>
+
+        <a class="col-md-3 offset-md-1 square square-link my-5">
+            <form action="@Url.Action("Pensums","Importar")" method="post" enctype="multipart/form-data">
+                <input style="width:1px;height:1px; opacity: 0" type="file" name="file" accept=".txt" />
+            </form>
+            <div class="d-flex flex-column align-items-center">
+                <h1><i class="fas fa-file-alt"></i></h1>
+                <span>Pensum</span>
+            </div>
+        </a>
+
+        <a class="col-md-3 offset-md-1 square square-link my-5">
+            <form action="@Url.Action("Profesores","Importar")" method="post" enctype="multipart/form-data">
+                <input style="width:1px;height:1px; opacity: 0" type="file" name="file" accept=".txt" />
+            </form>
+            <div class="d-flex flex-column align-items-center">
+                <h1><i class="fas fa-chalkboard-teacher"></i></h1>
+                <span>Profesores</span>
+            </div>
+        </a>
+
+        <a class="col-md-3 square square-link my-5">
+            <form action="@Url.Action("Estudiantes","Importar")" method="post" enctype="multipart/form-data">
+                <input style="width:1px;height:1px; opacity: 0" type="file" name="file" accept=".txt" />
+            </form>
+            <div class="d-flex flex-column align-items-center">
+                <h1><i class="fas fa-user-graduate"></i></h1>
+                <span>Estudiantes</span>
+            </div>
+        </a>
+    </div>
+</div>
+
+<script>
+    let links = document.getElementsByClassName("square-link");
+    for (let item of links) {
+        item.onclick = function () {
+
+            for (let inpt of item.getElementsByTagName("input")) {
+                inpt.click();
+            }
+        }
+
+        for (let inpt of item.getElementsByTagName("input")) {
+            inpt.onchange = function () {
+                for (let form of item.getElementsByTagName("form")) {
+                    form.submit();
+                }
+            }
+        }
+    }
+
+    @if (ViewBag.Msg != null)
+    {
+        <text>
+            alert("@ViewBag.Msg");
+        </text>
+    }
+</script>
